@@ -6,6 +6,8 @@ public class BlocoSpawner : MonoBehaviour
 {
     [SerializeField] private UI_pontos ui_points;
     [SerializeField] private GameObject Bloco;
+    [SerializeField] private AudioSource audioData;
+    [SerializeField] private ParticleSystem exp;
 
     void Start()
     {
@@ -19,6 +21,8 @@ public class BlocoSpawner : MonoBehaviour
                 Brick.GetComponent<Bloco>().setDurability(4 - j);
                 Brick.GetComponent<Bloco>().setValue(4 - j);
                 Brick.GetComponent<Bloco>().setUIPoints(ui_points);
+                Brick.GetComponent<Bloco>().setAudio(audioData);
+                Brick.GetComponent<Bloco>().setParticleSystem(exp);
             }
         }
     }
